@@ -2,12 +2,25 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   padding: 0;
 }
-
+body::-webkit-scrollbar {
+  background-color: #111213;
+  background-image: url("./images/scroll.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #111213;
+  background-image: url("./images/thumb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 #sect1 {
   background-color: #111213;
   height: 100vh;
@@ -39,7 +52,7 @@ header {
 header a {
   transform: rotate(-90deg);
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .btnMenu {
@@ -57,21 +70,19 @@ header a {
 .btnMenu span:nth-child(1) {
   width: 2px;
   height: 100%;
-  background-color: #F53B57;
+  background-color: #f53b57;
   transition: ease-in-out 1s;
 }
-
 .btnMenu span:nth-child(2) {
   width: 2px;
   height: 60%;
-  background-color: #F53B57;
+  background-color: #f53b57;
   transition: ease-in-out 1s;
 }
 
 .btnMenu:hover span:nth-child(1) {
   height: 60%;
 }
-
 .btnMenu:hover span:nth-child(2) {
   height: 100%;
 }
@@ -79,7 +90,43 @@ header a {
 .btnMenu:hover {
   cursor: pointer;
 }
-
+.btnMenu2:hover {
+  cursor: pointer;
+}
+.btnMenu2 {
+  position: absolute;
+  width: 15px;
+  height: 50px;
+  right: 60px;
+  top: 45vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.btnMenu2 span:nth-child(1) {
+  width: 2px;
+  height: 100%;
+  background-color: #f53b57;
+  animation: croix linear forwards 0.5s;
+}
+.btnMenu2 span:nth-child(2) {
+  width: 2px;
+  height: 60%;
+  background-color: #f53b57;
+  animation: croix2 linear forwards 0.5s;
+}
+@keyframes croix{
+to{
+  transform: rotate(50deg);
+}
+}
+@keyframes croix2{
+  to{
+    transform: rotate(-50deg);
+    height: 100%;
+  }
+  }
 /*video*/
 #video {
   height: 60vh;
@@ -118,7 +165,7 @@ header a {
 
 /*slider*/
 #prestation {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #111213;
   width: 100%;
   display: flex;
@@ -136,7 +183,7 @@ header a {
   position: relative;
   transition: ease-in-out 1s;
 }
-.slider::-webkit-scrollbar{
+.slider::-webkit-scrollbar {
   height: 0;
   width: 0;
 }
@@ -149,7 +196,7 @@ header a {
   justify-content: space-evenly;
 }
 .prestaBloc2 {
-  height: 100%;
+  min-height: 100%;
   min-width: 100%;
   display: flex;
   flex-direction: column;
@@ -157,102 +204,109 @@ header a {
   justify-content: space-evenly;
 }
 .prestaBloc3 {
-  height: 100%;
+  min-height: 100%;
   min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
-.gauche{
+.gauche {
   width: 70px;
   height: 70px;
   position: absolute;
-  background-image: url('./images/gauche2.png');
-  background-position: center;
-  background-size: cover;
   left: 20px;
   transition: ease-in-out 0.5s;
 }
-.droite{
+.droite {
   width: 70px;
   height: 70px;
   position: absolute;
-  background-image: url('./images/droite2.png');
-  background-position: center;
-  background-size: cover;
   right: 20px;
   transition: ease-in-out 0.5s;
 }
-.gauche:hover{
+.gauche:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
-.droite:hover{
+.droite:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 /*description*/
-.svgTitre{
-  width: 200px;
-  height: 200px;
+.svgTitre {
+  width: 300px;
+  height: 100px;
 }
-.border{
+.svgTitre2 {
+  width: 400px;
+  height: 100px;
+}
+.svgTitre3 {
+  width: 400px;
+  height: 100px;
+}
+.border {
   width: 10%;
   background-color: white;
   height: 1px;
 }
-.paragraphe{
+.paragraphe {
   width: 40%;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   text-align: center;
   line-height: 30px;
   letter-spacing: 2px;
 }
 /*bulles*/
-.bulle,.bulle1,.bulle2{
+.bulle,
+.bulle1,
+.bulle2 {
   position: absolute;
-  filter: blur(10px);
-  opacity: 0.8;
+  animation: bulleMoove linear infinite 10s;
+  filter: blur(50px);
+}
+.bulle {
+  height: 100px;
+  width: 100px;
+  top: 20%;
+  left: 20%;
   animation: bulleMoove linear infinite 10s;
 }
-.bulle{
-height: 100px;
-width: 100px;
-top:20%;
-left: 20%;
-animation: bulleMoove linear infinite 10s;
-}
-.bulle1{
+.bulle1 {
   height: 150px;
   width: 150px;
-  top:50%;
+  top: 50%;
   left: 50%;
   animation: bulleMoove linear infinite 20s;
+}
+.bulle2 {
+  height: 40px;
+  width: 40px;
+  top: 70%;
+  left: 10%;
+  animation: bulleMoove linear infinite 15s;
+}
+@keyframes bulleMoove {
+  0% {
+    transform: translate(0px);
   }
-  .bulle2{
-    height: 40px;
-    width: 40px;
-    top:70%;
-    left: 10%;
-    animation: bulleMoove linear infinite 15s;
-    }
-@keyframes bulleMoove{
-  0%{
-transform: translate(0px);
-  }25%{
+  25% {
     transform: translate(-50px);
-  }50%{
+  }
+  50% {
     transform: translate(150px);
-  }75%{
+  }
+  75% {
     transform: translateY(20px);
-  }100%{
+  }
+  100% {
     transform: translate(0px);
   }
 }
 /*titre portfolio*/
-#titrePortolio{
+#titrePortolio {
   width: 100%;
   height: 100vh;
   background-color: #111213;
@@ -262,11 +316,28 @@ transform: translate(0px);
   flex-direction: row;
   position: relative;
 }
-.paragraphePortfolio{
+.paragraphePortfolio {
   position: absolute;
   width: 800px;
   max-width: 80%;
   height: 70vh;
+  left: 15%;
+}
+#titrePortolio2 {
+  width: 100%;
+  height: 50vh;
+  background-color: #111213;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+.paragraphePortfolio2 {
+  position: absolute;
+  width: 400px;
+  max-width: 80%;
+  height: 35vh;
   left: 15%;
 }
 /*portfolio*/
@@ -293,9 +364,14 @@ transform: translate(0px);
 #grid article:nth-child(1) div:nth-child(1) {
   background-image: url("./images/co.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   transition: ease-in-out 2s;
   position: relative;
+}
+#grid article:nth-child(1) div:nth-child(1):hover {
+  cursor: pointer;
+  background-position: left;
 }
 #grid article:nth-child(1) div:nth-child(2) {
   position: relative;
@@ -304,10 +380,11 @@ transform: translate(0px);
   background-position: center;
   transition: ease-in-out 2s;
 }
-#grid article:nth-child(1) div:hover {
+#grid article:nth-child(1) div:nth-child(2):hover {
   cursor: pointer;
-  background-position: center;
+  background-position: bottom;
 }
+
 #grid article:nth-child(2) {
   display: grid;
   grid-template-columns: 2fr 1.3fr;
@@ -320,6 +397,10 @@ transform: translate(0px);
   transition: ease-in-out 2s;
   position: relative;
 }
+#grid article:nth-child(2) div:nth-child(1):hover {
+  cursor: pointer;
+  background-position: top;
+}
 #grid article:nth-child(2) div:nth-child(2) {
   background-image: url("./images/solaris.jpg");
   background-size: cover;
@@ -328,7 +409,7 @@ transform: translate(0px);
   transition: ease-in-out 2s;
   position: relative;
 }
-#grid article:nth-child(2) div:hover {
+#grid article:nth-child(2) div:nth-child(2):hover {
   cursor: pointer;
   background-position: right;
 }
@@ -346,6 +427,10 @@ transform: translate(0px);
   transition: ease-in-out 2s;
   position: relative;
 }
+#grid article:nth-child(3) div:nth-child(1):hover {
+  cursor: pointer;
+  background-position: right;
+}
 #grid article:nth-child(3) div:nth-child(2) {
   background-image: url("./images/gantColor.jpg");
   background-size: cover;
@@ -354,23 +439,23 @@ transform: translate(0px);
   transition: ease-in-out 2s;
   position: relative;
 }
-#grid article:nth-child(3) div:hover {
+#grid article:nth-child(3) div:nth-child(2):hover {
   cursor: pointer;
-  background-position: center;
+  background-position: top;
 }
-@media(max-width:500px){
+@media (max-width: 500px) {
   #grid {
-  height: 60vh;
+    height: 60vh;
   }
-  #grid article{
-    height:33%;
+  #grid article {
+    height: 33%;
     width: 100%;
-    }
+  }
 }
 /*titre categories*/
 #grid article div p {
   color: whitesmoke;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 4.5vmin;
   position: absolute;
   bottom: 20px;
@@ -378,8 +463,45 @@ transform: translate(0px);
   margin: 0;
 }
 /*conclusion*/
-#conclusion{
-width: 100%;
-height: 100vh;
-background-color: #111213;
+#conclusion {
+  width: 100%;
+  height: 100vh;
+  background-color: #111213;
+}
+/*menu*/
+#menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #111213;
+  top: 0;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  animation:menu1 linear forwards 0.5s;
+  opacity: 0;
+}
+.menuImage {
+  width: 30%;
+  height: 20vh;
+}
+.menuA {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 15%;
+  height: 35vh;
+}
+.menuA a {
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+@keyframes menu1{
+  to{
+    opacity: 1;
+  }
 }

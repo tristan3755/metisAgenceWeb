@@ -29,3 +29,16 @@ gauche.addEventListener('click',()=>{
     gauche.style.opacity="0"
     }
 })
+/*menu*/
+
+let btnOn=document.querySelector('.btnMenu')
+let menu=document.getElementById('menu')
+
+btnOn.addEventListener('click',()=>{
+  menu.style.display='flex'
+})
+
+let btnOff=document.querySelector('.btnMenu2')
+btnOff.addEventListener('click',()=>{
+  menu.style.display='none'
+})
