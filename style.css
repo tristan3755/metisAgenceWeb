@@ -536,12 +536,11 @@ to{
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-   min-width: 150px;
- 
+  min-width: 150px;
 }
 /*techno*/
 #techno{
-  height: 100vh;
+  min-height: 100vh;
   background-color: #111213;
   width: 100%;
   display:flex;
@@ -560,6 +559,87 @@ to{
   justify-content: center;
 }
 .technos{
-  height: 80vh;
+  min-height: 60vh;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+.technos div{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 40px;
+}
+.technos div:nth-child(1){
+  background-image: url('./images/html5.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 5s;
+}
+.technos div:nth-child(2){
+  background-image: url('./images/css.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 3s;
+}
+.technos div:nth-child(3){
+  background-image: url('./images/js.png');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 15s;
+}
+.technos div:nth-child(4){
+  background-image: url('./images/Angular.png');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 10s;
+}
+.technos div:nth-child(5){
+  background-image: url('./images/express.png');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 8s;
+}
+.technos div:nth-child(6){
+  background-image: url('./images/figma.png');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 12s;
+}
+.technos div:nth-child(7){
+  background-image: url('./images/SVG.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 20s;
+}.technos div:nth-child(8){
+  background-image: url('./images/mongo.gif');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 17s;
+}.technos div:nth-child(9){
+  background-image: url('./images/node.png');
+  background-size: cover;
+  background-position: center;
+}.technos div:nth-child(10){
+  background-image: url('./images/ai.png');
+  background-size: cover;
+  background-position: center;
+  animation: move linear infinite 13s;
+}
+@keyframes move{
+  0%{
+      transform: translate(0,0);
+  }25%{
+      transform: translate(20px,20px);
+      
+  }50%{
+      transform: translate(-20px,20px);
+  }75%{
+      transform: translate(20px,-20px);
+  }100%{
+      transform: translate(0,0);
+  }
+}
+/*footer*/
