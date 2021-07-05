@@ -282,8 +282,8 @@ to{
   animation: bulleMoove linear infinite 20s;
 }
 .bulle2 {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   top: 70%;
   left: 10%;
   animation: bulleMoove linear infinite 15s;
@@ -462,12 +462,7 @@ to{
   left: 20px;
   margin: 0;
 }
-/*conclusion*/
-#conclusion {
-  width: 100%;
-  height: 100vh;
-  background-color: #111213;
-}
+
 /*menu*/
 #menu {
   width: 100%;
@@ -504,4 +499,67 @@ to{
   to{
     opacity: 1;
   }
+}
+/*credo*/
+#credo {
+  width: 100%;
+  height: 100vh;
+  background-color: #111213;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#credo .textCredo p{
+  width: 40%;
+  color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+#credo .textCredo h1{
+  width: 30%;
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: bold;
+  align-self: flex-start;
+  min-width: 150px;
+}
+.textCredo{
+  height: 50vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+   min-width: 150px;
+ 
+}
+/*techno*/
+#techno{
+  height: 100vh;
+  background-color: #111213;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#techno h1{
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-size: 35px;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+.technos{
+  height: 80vh;
+  width: 100%;
 }
