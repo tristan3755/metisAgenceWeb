@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #111213;
 }
 body::-webkit-scrollbar {
   background-color: #111213;
@@ -31,32 +32,34 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   position: relative;
 }
-
 .logo {
   height: 45vh;
   width: 45vw;
 }
-
 header {
   width: 150px;
   height: 40vh;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  z-index: 5;
+  transition:ease-in-out 0.5s;
 }
-
 header a {
   transform: rotate(-90deg);
   color: white;
   font-family: "Raleway", sans-serif;
+  text-decoration: none;
 }
-
+header i{
+  color: white;
+}
 .btnMenu {
-  position: absolute;
+  position: fixed;
   width: 25px;
   height: 50px;
   right: 60px;
@@ -65,8 +68,9 @@ header a {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 5;
+  transition:ease-in-out 0.5s;
 }
-
 .btnMenu span:nth-child(1) {
   width: 2px;
   height: 100%;
@@ -116,17 +120,17 @@ header a {
   background-color: #f53b57;
   animation: croix2 linear forwards 0.5s;
 }
-@keyframes croix{
-to{
-  transform: rotate(50deg);
+@keyframes croix {
+  to {
+    transform: rotate(50deg);
+  }
 }
-}
-@keyframes croix2{
-  to{
+@keyframes croix2 {
+  to {
     transform: rotate(-50deg);
     height: 100%;
   }
-  }
+}
 /*video*/
 #video {
   height: 60vh;
@@ -175,7 +179,7 @@ to{
   position: relative;
 }
 .slider {
-  height: 80vh;
+  min-height: 80vh;
   width: 80%;
   overflow-x: auto;
   display: flex;
@@ -188,7 +192,7 @@ to{
   width: 0;
 }
 .prestaBloc {
-  height: 100%;
+  min-height: 100%;
   min-width: 100%;
   display: flex;
   flex-direction: column;
@@ -236,14 +240,17 @@ to{
 /*description*/
 .svgTitre {
   width: 300px;
+  max-width: 80%;
   height: 100px;
 }
 .svgTitre2 {
   width: 400px;
+  max-width: 80%;
   height: 100px;
 }
 .svgTitre3 {
   width: 400px;
+  max-width: 80%;
   height: 100px;
 }
 .border {
@@ -384,7 +391,6 @@ to{
   cursor: pointer;
   background-position: bottom;
 }
-
 #grid article:nth-child(2) {
   display: grid;
   grid-template-columns: 2fr 1.3fr;
@@ -462,7 +468,6 @@ to{
   left: 20px;
   margin: 0;
 }
-
 /*menu*/
 #menu {
   width: 100%;
@@ -475,7 +480,7 @@ to{
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  animation:menu1 linear forwards 0.5s;
+  animation: menu1 linear forwards 0.5s;
   opacity: 0;
 }
 .menuImage {
@@ -494,16 +499,17 @@ to{
   color: whitesmoke;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
+  text-decoration: none;
 }
-@keyframes menu1{
-  to{
+@keyframes menu1 {
+  to {
     opacity: 1;
   }
 }
 /*credo*/
 #credo {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #111213;
   position: relative;
   display: flex;
@@ -511,15 +517,15 @@ to{
   align-items: center;
   justify-content: center;
 }
-#credo .textCredo p{
+#credo .textCredo p {
   width: 40%;
   color: whitesmoke;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 2px;
 }
-#credo .textCredo h1{
+#credo .textCredo h1 {
   width: 30%;
   color: whitesmoke;
   font-family: "Raleway", sans-serif;
@@ -529,26 +535,27 @@ to{
   align-self: flex-start;
   min-width: 150px;
 }
-.textCredo{
-  height: 50vh;
+.textCredo {
+  min-height: 50vh;
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   min-width: 150px;
 }
 /*techno*/
-#techno{
+#techno {
   min-height: 100vh;
   background-color: #111213;
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-#techno h1{
+#techno h1 {
   color: whitesmoke;
   font-family: "Raleway", sans-serif;
   font-size: 35px;
@@ -558,7 +565,7 @@ to{
   align-self: center;
   justify-content: center;
 }
-.technos{
+.technos {
   min-height: 60vh;
   width: 100%;
   display: flex;
@@ -566,80 +573,224 @@ to{
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.technos div{
+.technos div {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin: 40px;
 }
-.technos div:nth-child(1){
-  background-image: url('./images/html5.jpg');
+.technos div:nth-child(1) {
+  background-image: url("./images/html5.jpg");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 5s;
 }
-.technos div:nth-child(2){
-  background-image: url('./images/css.jpg');
+.technos div:nth-child(2) {
+  background-image: url("./images/css.jpg");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 3s;
 }
-.technos div:nth-child(3){
-  background-image: url('./images/js.png');
+.technos div:nth-child(3) {
+  background-image: url("./images/js.png");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 15s;
 }
-.technos div:nth-child(4){
-  background-image: url('./images/Angular.png');
+.technos div:nth-child(4) {
+  background-image: url("./images/Angular.png");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 10s;
 }
-.technos div:nth-child(5){
-  background-image: url('./images/express.png');
+.technos div:nth-child(5) {
+  background-image: url("./images/express.png");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 8s;
 }
-.technos div:nth-child(6){
-  background-image: url('./images/figma.png');
+.technos div:nth-child(6) {
+  background-image: url("./images/figma.png");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 12s;
 }
-.technos div:nth-child(7){
-  background-image: url('./images/SVG.jpg');
+.technos div:nth-child(7) {
+  background-image: url("./images/SVG.jpg");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 20s;
-}.technos div:nth-child(8){
-  background-image: url('./images/mongo.gif');
+}
+.technos div:nth-child(8) {
+  background-image: url("./images/mongo.gif");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 17s;
-}.technos div:nth-child(9){
-  background-image: url('./images/node.png');
+}
+.technos div:nth-child(9) {
+  background-image: url("./images/node.png");
   background-size: cover;
   background-position: center;
-}.technos div:nth-child(10){
-  background-image: url('./images/ai.png');
+  animation: move linear infinite 7s;
+}
+.technos div:nth-child(10) {
+  background-image: url("./images/ai.png");
   background-size: cover;
   background-position: center;
   animation: move linear infinite 13s;
 }
-@keyframes move{
-  0%{
-      transform: translate(0,0);
-  }25%{
-      transform: translate(20px,20px);
-      
-  }50%{
-      transform: translate(-20px,20px);
-  }75%{
-      transform: translate(20px,-20px);
-  }100%{
-      transform: translate(0,0);
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, 20px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(20px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 /*footer*/
+footer {
+  height: 30vh;
+  width: 100%;
+  background-color: #111213;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.borderFooter {
+  position: absolute;
+  width: 30%;
+  height: 1px;
+  background-color: white;
+  top: 30px;
+}
+.copy,.mail{
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.copy>*{
+color: white;
+}
+.mail>*{
+  color: white;
+  text-decoration: none;
+}
+.mail i{
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/*media query*/
+@media(max-width:600px){
+  .bulle {
+    height: 50px;
+    width: 50px;
+    top: 20%;
+    left: 20%;
+    animation: bulleMoove1 linear infinite 10s;
+  }
+  .bulle1 {
+    height: 70px;
+    width: 70px;
+    top: 50%;
+    left: 50%;
+    animation: bulleMoove1 linear infinite 20s;
+  }
+  .bulle2 {
+    height: 20px;
+    width: 20px;
+    top: 70%;
+    left: 10%;
+    animation: bulleMoove1 linear infinite 15s;
+  }
+  .paragraphe{
+    width: 80%;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    text-align: left;
+  }
+  .droite{
+    display: none;
+  }
+  .gauche{
+    display: none;
+  }
+  #credo .textCredo p {
+    width: 100%;
+    color: whitesmoke;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  #credo .textCredo h1 {
+    width: 100%;
+    color: whitesmoke;
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+    align-self: flex-start;
+    min-width: 150px;
+  }
+  .technos div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 20px;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  header {
+    width: 50px;
+    height: 30vh;
+  }
+  .btnMenu {
+    right: 10px;
+    top: 55vh;
+  }
+  .btnMenu2 {
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    right: 20px;
+    top: 55vh;
+  }
+}
+@keyframes bulleMoove {
+  0% {
+    transform: translate(0px);
+  }
+  25% {
+    transform: translate(-20px);
+  }
+  50% {
+    transform: translate(50px);
+  }
+  75% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
