@@ -59,7 +59,7 @@ console.log('click')
 menu.style.display='none'
 })
 /*interception*/
-
+if(window.matchMedia("(min-width:600px)").matches){
 let header=document.getElementById('header')
 
 let observer = new IntersectionObserver((entries)=>{
@@ -113,3 +113,4 @@ let observer1 = new IntersectionObserver((entries)=>{
   
   let target1 = divGrid
   observer1.observe(target1);
+}

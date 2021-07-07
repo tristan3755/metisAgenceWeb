@@ -312,6 +312,14 @@ header i{
     transform: translate(0px);
   }
 }
+/*swipe*/
+.swipe{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom:0px;
+  display: none;
+}
 /*titre portfolio*/
 #titrePortolio {
   width: 100%;
@@ -500,6 +508,7 @@ header i{
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   text-decoration: none;
+  text-align: center;
 }
 @keyframes menu1 {
   to {
@@ -765,16 +774,22 @@ color: white;
     width: 50px;
     height: 30vh;
   }
+  header a{
+    font-size: 10px;
+  }
   .btnMenu {
     right: 10px;
-    top: 55vh;
+    top: 50vh;
   }
   .btnMenu2 {
     position: absolute;
     width: 15px;
     height: 50px;
     right: 20px;
-    top: 55vh;
+    top: 50vh;
+  }
+  .swipe{
+    display: flex;
   }
 }
 @keyframes bulleMoove {
