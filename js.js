@@ -114,3 +114,105 @@ let observer1 = new IntersectionObserver((entries)=>{
   let target1 = divGrid
   observer1.observe(target1);
 }
+
+let mesArticles=document.querySelector('#grid article')
+
+mesArticles.addEventListener('click',()=>{
+console.log('yo booby')
+})
+let mesArticles2=document.querySelector('#grid article:nth-child(2)')
+
+mesArticles2.addEventListener('click',()=>{
+console.log('yo booby2')
+})
+
+let mesArticles3=document.querySelector('#grid article:nth-child(3)')
+
+mesArticles3.addEventListener('click',()=>{
+console.log('yo booby3')
+})
+
+
+let observerArticles = new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  console.log(entry.isIntersecting)
+  console.log(entry.intersectionRatio)
+  if(entry.intersectionRatio){
+    console.log('j \'y suis article1' )
+    mesArticles.style.opacity="1"
+    mesArticles.style.transform='translateY(0)'
+    observer.disconnect()
+  }
+  })
+  });
+  
+  let targetArticle = mesArticles
+  observerArticles.observe(targetArticle);
+
+  let observerArticles1 = new IntersectionObserver((entries,observer)=>{
+
+    entries.forEach((entry)=>{
+    console.log(entry.isIntersecting)
+    console.log(entry.intersectionRatio)
+    if(entry.intersectionRatio){
+      console.log('j \'y suis article2' )
+      mesArticles2.style.opacity="1"
+      mesArticles2.style.transform='translateY(0)'
+      observer.disconnect()
+    }
+    })
+    });
+    
+    let targetArticle1 = mesArticles2
+    observerArticles1.observe(targetArticle1);
+
+    let observerArticles2 = new IntersectionObserver((entries,observer)=>{
+
+      entries.forEach((entry)=>{
+      console.log(entry.isIntersecting)
+      console.log(entry.intersectionRatio)
+      if(entry.intersectionRatio){
+        console.log('j \'y suis article3' )
+        mesArticles3.style.opacity="1"
+        mesArticles3.style.transform='translateY(0)'
+        observer.disconnect()
+      }
+      })
+      });
+      
+      let targetArticle2 = mesArticles3
+      observerArticles2.observe(targetArticle2);
+     
+/*span observer*/
+let blocTechno=document.getElementById('techno')
+let spanTechno=document.querySelector('.spanTechno')
+let observerTechno=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+spanTechno.style.display="flex"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetspan = blocTechno
+  observerTechno.observe(targetspan);
+
+/*bg*/
+
+monBg=document.getElementById('imgBack')
+
+window.addEventListener('scroll',()=>{
+
+    let valeur=window.scrollY/40
+
+    monBg.style.backgroundPositionY=valeur*-2 + "px"
+
+})
+/*technos*/
+ let techno1=document.querySelector('.techno1')
+
+ console.log(spanTechno.clientHeight)
+

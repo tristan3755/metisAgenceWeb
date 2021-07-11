@@ -36,6 +36,11 @@ body::-webkit-scrollbar-thumb {
   height: 45vh;
   width: 45vw;
 }
+.logoMobile {
+  height: 65vh;
+  width: 65vw;
+  display: none;
+}
 header {
   width: 150px;
   height: 40vh;
@@ -334,7 +339,7 @@ header i{
 .paragraphePortfolio {
   position: absolute;
   width: 800px;
-  max-width: 80%;
+  max-width: 60%;
   height: 70vh;
   left: 15%;
 }
@@ -351,7 +356,7 @@ header i{
 .paragraphePortfolio2 {
   position: absolute;
   width: 400px;
-  max-width: 80%;
+  max-width: 60%;
   height: 35vh;
   left: 15%;
 }
@@ -368,10 +373,13 @@ header i{
 #grid article {
   width: 100%;
   height: 50%;
+  opacity: 0;
+  transform: translateY(250px);
+  transition: ease-in-out 0.5s;
 }
 #grid article:nth-child(1) {
   display: grid;
-  grid-template-columns: 1.3fr 2fr;
+  grid-template-columns: 2fr 2fr;
   grid-gap: 2px;
   margin-top: 2px;
   margin-bottom: 2px;
@@ -429,7 +437,7 @@ header i{
 }
 #grid article:nth-child(3) {
   display: grid;
-  grid-template-columns: 1.3fr 2fr;
+  grid-template-columns: 2fr 2fr;
   grid-gap: 2px;
   margin-top: 2px;
 }
@@ -554,127 +562,95 @@ header i{
   justify-content: space-evenly;
   min-width: 150px;
 }
+/*imgBack*/
+#imgBack{
+  margin-top: 20vh;
+  height: 70vh;
+  width: 100%;
+  background-image: url('./images/bg2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y:'';
+  background-color: #111213;
+  background-size: cover;
+}
 /*techno*/
 #techno {
-  min-height: 100vh;
+  min-height: 150vh;
   background-color: #111213;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  transition: ease-in-out 0.5s;
+  position: relative;
 }
-#techno h1 {
+/*#techno h1 {
   color: whitesmoke;
   font-family: "Raleway", sans-serif;
   font-size: 35px;
   height: 20vh;
+  position: absolute;
+  top: 10px;
+}*/
+.spanTechno{
+width: 2px;
+height: 0%;
+background-color: #f53b57;
+display: flex;
+top: 0;
+left: 50%;
+transform:translateX(50%) ;
+position: absolute;
+animation: spanTecho linear forwards 4s;
+display: none;
+}
+.ligneTechno{
+  width: 50%;
+  height: 100px;
   display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
 }
-.technos {
-  min-height: 60vh;
-  width: 100%;
+.ligneTechno div{
+height: 100%;
+width: 40%;
+}
+.ligneTechno2{
+  width: 50%;
+  height: 100px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
 }
-.technos div {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 40px;
-}
-.technos div:nth-child(1) {
-  background-image: url("./images/html5.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 5s;
-}
-.technos div:nth-child(2) {
-  background-image: url("./images/css.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 3s;
-}
-.technos div:nth-child(3) {
-  background-image: url("./images/js.png");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 15s;
-}
-.technos div:nth-child(4) {
-  background-image: url("./images/Angular.png");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 10s;
-}
-.technos div:nth-child(5) {
-  background-image: url("./images/express.png");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 8s;
-}
-.technos div:nth-child(6) {
-  background-image: url("./images/figma.png");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 12s;
-}
-.technos div:nth-child(7) {
-  background-image: url("./images/SVG.jpg");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 20s;
-}
-.technos div:nth-child(8) {
-  background-image: url("./images/mongo.gif");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 17s;
-}
-.technos div:nth-child(9) {
-  background-image: url("./images/node.png");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 7s;
-}
-.technos div:nth-child(10) {
-  background-image: url("./images/ai.png");
-  background-size: cover;
-  background-position: center;
-  animation: move linear infinite 13s;
-}
-@keyframes move {
-  0% {
-    transform: translate(0, 0);
+.ligneTechno2 div{
+  height: 100%;
+  width: 40%;
   }
-  25% {
-    transform: translate(20px, 20px);
-  }
-  50% {
-    transform: translate(-20px, 20px);
-  }
-  75% {
-    transform: translate(20px, -20px);
-  }
-  100% {
-    transform: translate(0, 0);
+@keyframes spanTecho{
+  to{
+    height: 100%;
   }
 }
 /*footer*/
 footer {
-  height: 30vh;
+  min-height: 50vh;
   width: 100%;
   background-color: #111213;
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+}
+.logoFooter{
+width: 150px;
+height: 150px;
+margin-top: 50px;
 }
 .borderFooter {
   position: absolute;
@@ -683,12 +659,25 @@ footer {
   background-color: white;
   top: 30px;
 }
-.copy,.mail{
+.copy{
   width: 300px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+.mail{
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.borderFoot{
+  height: 1px;
+  width: 30%;
+  background-color: white;
 }
 .copy>*{
 color: white;
@@ -704,6 +693,18 @@ color: white;
 
 /*media query*/
 @media(max-width:600px){
+  #imgBack{
+    margin-top: 20vh;
+    height: 100vh;
+    width: 100%;
+  }
+  #titrePortolio {
+    height: 50vh;
+  }
+  .logo {
+    height: 65vh;
+    width: 65vw;
+  }
   .bulle {
     height: 50px;
     width: 50px;
@@ -759,8 +760,8 @@ color: white;
     min-width: 150px;
   }
   .technos div {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin: 20px;
   }
@@ -777,9 +778,12 @@ color: white;
   header a{
     font-size: 10px;
   }
+  .menuEfface{
+    opacity: 0;
+  }
   .btnMenu {
     right: 10px;
-    top: 50vh;
+    top: 50%;
   }
   .btnMenu2 {
     position: absolute;
