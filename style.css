@@ -586,14 +586,21 @@ header i{
   transition: ease-in-out 0.5s;
   position: relative;
 }
-/*#techno h1 {
+#titreTechno {
+  min-height: 50vh;
+  background-color: #111213;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#titreTechno h1 {
   color: whitesmoke;
   font-family: "Raleway", sans-serif;
   font-size: 35px;
   height: 20vh;
-  position: absolute;
-  top: 10px;
-}*/
+}
 .spanTechno{
 width: 2px;
 height: 0%;
@@ -613,10 +620,13 @@ display: none;
   align-items: center;
   justify-content: flex-start;
   position: relative;
+
 }
 .ligneTechno div{
 height: 100%;
 width: 40%;
+opacity: 0;
+transition: ease-in-out 1s;
 }
 .ligneTechno2{
   width: 50%;
@@ -629,6 +639,8 @@ width: 40%;
 .ligneTechno2 div{
   height: 100%;
   width: 40%;
+  opacity: 0;
+transition: ease-in-out 1s;
   }
 @keyframes spanTecho{
   to{

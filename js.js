@@ -190,12 +190,12 @@ let spanTechno=document.querySelector('.spanTechno')
 let observerTechno=new IntersectionObserver((entries,observer)=>{
 
   entries.forEach((entry)=>{
-  if(entry.intersectionRatio>=0.5){
+  if(entry.intersectionRatio>=0.3){
 spanTechno.style.display="flex"
     observer.disconnect()
   }
   })
-  },{threshold: 0.5});
+  },{threshold: 0.3});
 
   let targetspan = blocTechno
   observerTechno.observe(targetspan);
@@ -211,8 +211,101 @@ window.addEventListener('scroll',()=>{
     monBg.style.backgroundPositionY=valeur*-2 + "px"
 
 })
+
 /*technos*/
- let techno1=document.querySelector('.techno1')
 
- console.log(spanTechno.clientHeight)
+let divTechnos=document.getElementById('divTechno1')
 
+let observerTechnologies=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+    divTechnos.style.opacity="1"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetTechnosDiv = divTechnos
+  observerTechnologies.observe(targetTechnosDiv);
+
+
+
+let divTechnos2=document.getElementById('divTechno2')
+
+let observerTechnologies2=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+    divTechnos2.style.opacity="1"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetTechnosDiv2 = divTechnos2
+  observerTechnologies2.observe(targetTechnosDiv2);
+
+
+  let divTechnos3=document.getElementById('divTechno3')
+
+let observerTechnologies3=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+    divTechnos3.style.opacity="1"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetTechnosDiv3 = divTechnos3
+  observerTechnologies3.observe(targetTechnosDiv3);
+
+
+
+  let divTechnos4=document.getElementById('divTechno4')
+
+let observerTechnologies4=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+    divTechnos4.style.opacity="1"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetTechnosDiv4 = divTechnos4
+  observerTechnologies4.observe(targetTechnosDiv4);
+
+  let divTechnos5=document.getElementById('divTechno5')
+
+let observerTechnologies5=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+    divTechnos5.style.opacity="1"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetTechnosDiv5 = divTechnos5
+  observerTechnologies5.observe(targetTechnosDiv5);
+
+  
+  let divTechnos6=document.getElementById('divTechno6')
+
+let observerTechnologies6=new IntersectionObserver((entries,observer)=>{
+
+  entries.forEach((entry)=>{
+  if(entry.intersectionRatio>=0.5){
+    divTechnos6.style.opacity="1"
+    observer.disconnect()
+  }
+  })
+  },{threshold: 0.5});
+
+  let targetTechnosDiv6 = divTechnos6
+  observerTechnologies6.observe(targetTechnosDiv6);
