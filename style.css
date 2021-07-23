@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 body {
   margin: 0;
   padding: 0;
   background-color: #111213;
+  
 }
 body::-webkit-scrollbar {
   background-color: #111213;
@@ -191,6 +193,7 @@ header i{
   flex-direction: row;
   position: relative;
   transition: ease-in-out 1s;
+  scrollbar-width: none;
 }
 .slider::-webkit-scrollbar {
   height: 0;
